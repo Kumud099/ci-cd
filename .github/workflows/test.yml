@@ -1,9 +1,9 @@
-name : Test Project
+name: Test Project
 
-on :
+on:
   pull_request:
     branches:
-      -main
+      - main
 
 jobs:
   test:
@@ -11,12 +11,7 @@ jobs:
     container:
       image: node:20
     steps:
-      - uses : actions/checkout@v3
-        with:
-          node-version:20
-      - run: npm ci 
+      - uses: actions/checkout@v3
+      - run: npm ci
       - run: npm test
       - run: npm run build
-
-
-
